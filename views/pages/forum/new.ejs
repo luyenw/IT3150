@@ -1,0 +1,11 @@
+<form action="/f/new" method="post">
+    box:
+    <select name="box" id="box">
+        <% boxes.forEach(box=>{ %>
+            <option value=<%=box.slug%>><%=box.title%></option>
+        <% }) %>
+    </select>
+    <br>
+    title: <input type="text" name="title" id="title">
+    <input type="submit" value="create new forum">
+</form>

@@ -1,0 +1,39 @@
+<div class="block">
+    <%- include('../item/breadcrumbs', {title: [forum.boxID.title], links: ['/#'+forum.boxID.slug] }) %>
+    <div class="block-header forum-header">
+        <div class="header-title">
+            <h1>
+                <%= forum.title %>
+            </h1>
+        </div>
+        <% if (user){ %>
+            <%- include('../item/post-thread-button', {slug: forum.slug}) %>
+        <% } %>
+    </div>
+    <% if (total_pages > 1 ){ %>
+    <div class="block-outer">
+        <div class="block-outer-main">
+            <%- include('../item/page_nav', {current_page: current_page, total_pages: total_pages, slug: '/f/'+forum.slug}) %>
+        </div>
+    </div>
+    <% } %> 
+    <div class="block-container">
+        <div class="forum-block-filter-bar">
+            <a class="toggle">
+                <span class="trigger-menu button"></span>
+            </a>
+        </div>
+        <div class="block-body block-container">
+            <% threads?.forEach(thread=>{ %>
+                <%- include('../item/item', {thread: thread}) %>
+            <% }) %>
+        </div>
+    </div>
+    <% if (total_pages > 1 ){ %>
+        <div class="block-outer">
+            <div class="block-outer-main">
+                <%- include('../item/page_nav', {current_page: current_page, total_pages: total_pages, slug: '/f/'+forum.slug}) %>
+            </div>
+        </div>
+    <% } %> 
+</div>

@@ -1,0 +1,55 @@
+<article class="message">
+    <div class="message-inner">
+        <div class="message-cell message-cell--user">
+            <section class="message-user">
+                <div class="message-avatar">
+                    <div class="message-avatar-wrapper">
+                        <a class="avatar avatar--m" href=<%="/u/"+message.userID.slug%>>
+                            <img src="https://statics.voz.tech/data/avatars/m/1832/1832781.jpg?1663590810" srcset="https://statics.voz.tech/data/avatars/l/1832/1832781.jpg?1663590810 2x" alt="linhlevis" class="avatar-u1832781-m" width="96" height="96" loading="lazy" itemprop="image">
+                        </a>
+                    </div>
+                </div>
+                <div class="message-userDetails">
+                    <h4 class="message-name">
+                        <% if(type==0) { %>
+                        <a href=<%="/u/"+message.userID.slug%>><%= message.userID.username %></a>
+                        <% } else if(type==1) { %>
+                        <a href=<%="/u/"+user.slug%>><%= user.username %></a>
+                        <% } %>
+
+                    </h4>
+                </div>
+                <span class="message-userArrow"></span>
+            </section>
+        </div>
+        <div class="message-cell message-cell--main">
+            <div class="message-main">
+            <div class="message-attribution">
+                <ul>
+                    <li>
+                        <a href="">
+                            <%= thread.createdAt.toLocaleDateString() %>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="message-content">
+                <% if(type==0){ %>
+                <%- message.body %>
+                <% }else if(type==1){ %>
+                <%- include('reply-block') %>
+                <% } %>
+            </div>
+            <% if(user && type==0) {%>
+                <footer class="message-footer">
+                    <div class="message-actionBar">
+                        <div class="actionBar-set actionBar-set--external">
+                            <a class="actionBar-action actionBar-action--reply" title="Reply this message" rel="nofollow" data-xf-click="quote">Reply</a>
+                        </div>
+                    </div>
+                </footer>
+            <% } %>
+        </div>
+        </div>
+    </div>
+</article>

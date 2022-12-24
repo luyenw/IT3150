@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/main/head') %>
+  </head>
+  <body>
+    <%- include('../partials/main/header') %>
+    <main>
+      <%- include('../partials/content', {page: page, data: data}) %>
+    </main>
+    <%- include('../partials/main/footer') %>
+    <script type="text/javascript" src='/js/header_fixed_onscroll.js'></script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+.node-body{
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+.node-main{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10px;
+}
+.node+.node{
+    border-top: 1px solid #d3d5d7;
+}
+.node-extra{
+    display: table-cell;
+    vertical-align: middle;
+    width: 280px;
+    padding: 10px;
+    font-size: 0.875rem;
+}
+.node-stats{
+    display: table-cell;
+    width: 140px;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px 0;
+}
+.node-extra-list{
+    display: flex;
+    flex-direction: row;
+}
+.node-extra-row{
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+    text-overflow: ellipsis;
+    color: #8f9193;
+}
+.node-extra-list li{
+    padding-right: 4px;
+}
+.node-icon{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 46px;
+    padding: 10px 0 10px 10px;
+}
+.node{
+    display: flex;
+    flex-direction: row;
+    background-color: #ebeced;
+}
+.node-icon i{
+    display: block;
+    line-height: 1.125;
+    font-size: 32px;
+    color: #ffba8c;
+}
+.node-icon{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 46px;
+    padding: 10px 0 10px 10px;
+}
+.node-stats>dl.pairs.pairs--rows:first-child {
+    padding-left: 0;
+}
+.node-stats>dl.pairs.pairs--rows {
+    width: 50%;
+    float: left;
+    margin: 0;
+    padding: 0 3px;
+}
+.node-extra-icon {
+    padding-right: 10px;
+    float: left;
+}

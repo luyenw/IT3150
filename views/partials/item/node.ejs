@@ -1,0 +1,51 @@
+<div class="node">
+    <div class="node-body">
+        <span class="node-icon icon">
+            <i class="fa--xf far fa-comments" aria-hidden="true"></i>
+        </span>
+        <div class="node-main">
+            <h3 class="node-title">
+                <a href=<%="/f/"+forum.slug%>><%=forum.title%></a>
+            </h3>
+            <div class="node-meta">
+            </div>
+        </div>
+        <div class="node-stats">
+            <dl class="pairs pairs--rows">
+                <dt>Threads</dt>
+                <dd><%= forum.total_threads %></dd>
+            </dl>
+            <dl class="pairs pairs--rows">
+                <dt>Messages</dt>
+                <dd><%= forum.total_messages %></dd>
+            </dl>
+        </div>
+        <% if (forum.lastThread) { %>
+            
+        <% } %>
+        <div class="node-extra">
+            <div class="node-extra-icon">
+                <a class="avatar avatar--s" >
+                    <img src="https://statics.voz.tech/data/avatars/m/1832/1832781.jpg?1663590810" srcset="https://statics.voz.tech/data/avatars/l/1832/1832781.jpg?1663590810 2x" alt="linhlevis" class="avatar-u1832781-m" width="96" height="96" loading="lazy" itemprop="image">
+                </a>
+            </div>
+            <div class="node-extra-row">
+                <div class="node-extra-title">
+                <a href=<%= "/t/" + forum.lastThread?.slug %> class="meta-data"><%=forum.lastThread?.title%></a>
+                </div>
+            </div>
+            <div class="node-extra-row">
+                <ul class="node-extra-list">
+                    <li>
+                        <div class="node-extra-date"><%=forum.lastThread?.createdAt.toLocaleDateString()%></div>
+                    </li>
+                    <li>
+                        <div class="node-extra-user">
+                            <a class="meta-data" href=<%="/u/"+forum.lastThread?.userID.slug%>><%=forum.lastThread?.userID.username%></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

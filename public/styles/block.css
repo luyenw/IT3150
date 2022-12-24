@@ -1,0 +1,24 @@
+.block-container{
+    color: #15191d;
+    border-top-color: #cbcdd0;
+    border-right-color: #c3c6c9;
+    border-bottom-color: #b5b9bd;
+    border-left-color: #c3c6c9;
+}
+.block-header{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 100%;
+    padding-bottom: 4px;
+}
+.block{
+    display: flex;
+    flex-direction: column;
+}
+.block-outer-main{
+    float: left;
+}
+.block-outer-opposite{
+    float: right;
+}

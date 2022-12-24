@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/main/head') %>
+</head>
+<body>
+    <%- include('../partials/main/header', {user: user}) %>
+    <main>
+        <% if (user?.role == 0){ %>
+            <div><a href="/f/new">new forum</a></div>
+        <% } %>
+        
+        <%- include('../partials/content', {page: 'index', data: {}}) %>
+    </main>
+    <%- include('../partials/main/footer') %>
+</body>
+</html>

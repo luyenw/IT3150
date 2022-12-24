@@ -1,0 +1,64 @@
+<nav class="pageNav">
+    <% if (current_page > 1) { %>
+    <a href=<%= slug + '/' + (current_page - 1).toString() %> class="pageNav-jump pageNav-jump--prev">Prev</a>
+    <% } %>
+    <ul class="pageNav-main">
+        <% if (current_page > 5) { %>
+            <li class="pageNav-page">
+                <a href="">
+                    1
+                </a>
+            </li>
+            <li class="pageNav-page pageNav-page--skip pageNav-page--skipEnd">
+                <a href="">
+                    ...
+                </a>
+            </li>
+            <% for (let i=current_page - 2; i<current_page; i++) { %>
+                <li class="pageNav-page">
+                    <a href=<%= slug + '/' + i %>>
+                        <%= i %>
+                    </a>
+                </li>
+            <% } %>
+        <% } else if (current_page <= 5) { %>
+            <% for (let i=1; i<current_page; i++) { %>
+                <li class="pageNav-page">
+                    <a href=<%= slug + '/' + i %>>
+                        <%= i %>
+                    </a>
+                </li>
+            <% } %>
+        <% } %>
+        <li class="pageNav-page pageNav-page--current ">
+            <a href=<%= slug + '/' + current_page %>>
+                <%= current_page %>
+            </a>
+        </li>
+        <% if (total_pages - current_page > 5) { %>
+            <% for (let i=current_page+1; i<=current_page +2; i++) { %>
+                <li class="pageNav-page">
+                    <a href=<%=  slug + '/' + i %>>
+                        <%= i %>
+                    </a>
+                </li>
+            <% } %>
+            <li class="pageNav-page pageNav-page--skip pageNav-page--skipEnd">
+                <a href="">
+                    ...
+                </a>
+            </li>
+        <% } else if (total_pages - current_page <= 5) { %>
+            <% for (let i=current_page + 1; i<=total_pages; i++) { %>
+                <li class="pageNav-page">
+                    <a href=<%= slug + '/' + i %>>
+                        <%= i %>
+                    </a>
+                </li>
+            <% } %>
+        <% } %>
+    </ul>
+    <% if (current_page < total_pages) { %>
+    <a href=<%= slug + '/' + (current_page + 1).toString() %> class="pageNav-jump pageNav-jump--next">Next</a>
+    <% } %>
+</nav>

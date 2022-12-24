@@ -1,0 +1,53 @@
+<div class="item">
+    <div class="item-body">
+        <div class="item-body-row">
+            <h3 class="item-title">
+                <a href=<%="/t/"+thread.slug%>><%=thread.title%></a>
+            </h3>
+            <div class="item-extra">
+                <div class="item-extra-row">
+                    <div class="item-extra-author">
+                        <a href="" class="meta-data">
+                            <%= thread.userID.username %>
+                        </a>
+                    </div>
+                </div>
+                <div class="item-extra-row">
+                    <div class="item-extra-date">
+                        <div class="node-extra-date icon" id="dot">
+                            <%= thread.createdAt.toLocaleDateString() %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item-body-row">
+            <div class="item-meta">
+                <div class="item-stats">
+                    <table>
+                        <tr>
+                            <td>Replies:</td>
+                            <td><%= thread.replies %></td>
+                        </tr>
+                        <tr>
+                            <td>Views:</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item-last-reply">
+                    <div class="item-last-reply-date">
+                        <a class="meta-data">
+                            <%= thread.lastComment?.createdAt.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: true }) %>
+                        </a>
+                    </div>
+                    <div class="item-last-reply-user">
+                        <a href=<%="/u/"+thread.lastComment?.userID.slug%>>
+                            <%= thread.lastComment?.userID.username %>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

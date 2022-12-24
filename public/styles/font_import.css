@@ -1,0 +1,19 @@
+@font-face {
+    font-family: Nabla;
+    src: url(../fonts/Nabla-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Jetbrains Mono';
+    src: url(../fonts/JetBrainsMono-Light.ttf);
+}
+
+@font-face {
+    font-family: 'WorkSans';
+    src: url(../fonts/WorkSans-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url(../fonts/Lora-Regular.ttf);
+}

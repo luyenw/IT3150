@@ -1,0 +1,25 @@
+.memberHeader-name{
+    margin: 0;
+    margin-top: -0.15em;
+    padding: 0;
+    font-weight: 400;
+    color: #23497c;
+}
+.memberHeader-mainContent{
+    position: relative;
+}
+.memberHeader-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: #dce7f5;
+    border-bottom: 1px solid #cbcdd0;
+}
+.memberHeader-avatar {
+    position: absolute;
+    padding: 10px;
+}
+.memberHeader-content {
+    padding: 10px;
+    padding-left: 212px;
+}

@@ -1,0 +1,50 @@
+.header nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 8px;
+    font-size: large;
+    position: relative;
+    top: 0;
+    color: #ebeced;
+    background: #343a40;
+}
+.logo a{
+    font-family: 'Nabla', cursive;
+    font-size: xx-large;
+    cursor: pointer;
+    padding: 0 8px;
+}
+.logo>a:hover{
+    text-decoration: none;
+}
+.nav__links {
+    list-style: none;
+}
+ 
+.nav__links li {
+    display: inline-block;
+    padding: 0 12px;
+}
+.nav__links li>a {
+    color: #ebeced;
+}
+.nav__links li>a:hover {
+    text-decoration: underline;
+    color: #f60;
+}
+
+.logout_button{
+    background-color: transparent;
+    border: none;
+    font-family: 'WorkSans', monospace;
+    font-size: large;
+    font-weight: 300;
+    color: #ebeced;
+}
+.logout_button:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #f60;
+}

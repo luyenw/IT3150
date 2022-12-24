@@ -1,0 +1,66 @@
+<div class="block">
+<%- include('../item/breadcrumbs', {title: [thread.forumID.boxID.title, thread.forumID.title], links: ['/#'+thread.forumID.boxID.slug, '/f/'+thread.forumID.slug] }) %>
+<div class="block-header thread-header">
+    <div class="header-title">
+        <h1>
+            <%= thread.title %>
+        </h1>
+    </div>
+    <div class="description">
+        <ul>
+            <li>
+                <span class="icon icon--user">
+                </span>
+                <a href=<%="/u/"+thread.userID.slug%>><%= thread.userID.username %></a>
+            </li>
+            <li>
+                <span class="icon icon--clock">
+                </span>
+                <a>
+                    <%= thread.createdAt.toLocaleDateString() %>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="body-main">
+    <div class="page-content">
+        <div class="block">
+            <div class="block-container">
+                <div class="block-body">
+                    <% if(current_page == 1) { %>
+                    <%- include('../item/message', {message: thread, type: 0}) %>
+                    <% } %>
+                    <% comments.forEach((comment)=>{ %>
+                        <%- include('../item/message', {message: comment, type: 0}) %>
+                    <% }) %>
+                </div>
+            </div>
+            <div class="block-outer">
+                <% if (total_pages > 1 ){ %>
+                <div class="block-outer-main">
+                    <%- include('../item/page_nav', {current_page: current_page, total_pages: total_pages, slug: '/t/'+thread.slug}) %>
+                </div>
+                <% } %> 
+                <div class="block-outer-opposite">
+                    <% if(!user){ %>
+                    <a href="/login" class="button button--link">
+                        <span class="button-text">
+                            You must log in or register to reply here.
+                        </span>
+                    </a>
+                    <% } else{ %>
+                        <form action=<%="/t/"+thread.slug+"/add_reply"%> class="reply-form" method="post">
+                            <div class="block-container">
+                                <div class="block-body">
+                                    <%- include('../item/message', {message: thread, type: 1}) %>
+                                </div>
+                            </div>
+                        </form>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

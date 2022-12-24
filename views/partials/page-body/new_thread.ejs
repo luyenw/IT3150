@@ -1,0 +1,42 @@
+<form action=<%= "/f/"+forum.slug+"/post-thread" %> method="post">
+    <div class="forum-block-header">
+      <div class="header-title">
+          <h1>
+            Post thread      
+          </h1>
+      </div>
+  </div>
+    <div class="block-container">
+      <div class="block-body">
+        <dl class="form-row">
+          <dd>
+            <textarea type="text" placeholder="Thread title" class="input" name="title" id="title"></textarea>
+          </dd>
+        </dl>
+  
+        <dl class="form-row">
+          <dd>
+            <textarea id="div_editor1" name="body">
+            </textarea>
+            <script>
+              var editor1 = new RichTextEditor("#div_editor1");
+            </script>
+        </dl>
+  
+        <dl class="form-submit-row">
+          <dt></dt>
+          <dd>
+            <div class="form-submit-row-main">
+              <div class="form-submit-row-bar"></div>
+              <div class="form-submit-row-controll">
+                <button type="submit" class="button login-button">
+                  <span class="button-text icon login-icon"> Post thread</span>
+                </button>
+              </div>
+            </div>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </form>
+  

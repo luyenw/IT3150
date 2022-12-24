@@ -1,0 +1,11 @@
+<ul class="breadcrumbs">
+    <li>
+        <a href="/">Forums</a>
+    </li>
+
+    <% for(let i=0;i<title.length;i++){ %>
+        <li>
+            <a href=<%=links[i]%>><%= title[i] %></a>
+        </li>
+    <% } %>
+</ul>

@@ -1,0 +1,26 @@
+.box-block-header{
+    padding: 6px 10px;
+    margin: 0;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: #ebeced;
+    background: #5c7099;
+    border-bottom: 1px solid #cbcdd0;
+}
+.box-block-header a{
+    color: #ebeced;
+}
+.box-block-header a:hover{
+    color: #ebeced;
+}
+.box-block+.box-block{
+    margin-top: 12px;
+}
+.box-block-header:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.box-block-container{
+    color: #15191d;
+}

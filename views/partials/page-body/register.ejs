@@ -1,0 +1,51 @@
+<form action="/register" method="post">
+  <div class="forum-block-header">
+    <div class="header-title">
+      <h1>Register</h1>
+    </div>
+  </div>
+  <div class="block-container">
+    <div class="block-body">
+      <dl class="form-row">
+        <dt>
+          <label for="username">Username</label>
+        </dt>
+
+        <dd>
+          <input type="text" class="input" name="username" id="username" />
+        </dd>
+      </dl>
+
+      <dl class="form-row">
+        <dt>
+          <label for="password">Password</label>
+        </dt>
+        <dd>
+          <input type="text" class="input" name="password" id="password" />
+        </dd>
+      </dl>
+
+      <dl class="form-submit-row">
+        <dt></dt>
+        <dd>
+          <div class="form-submit-row-main">
+            <div class="form-submit-row-bar"></div>
+            <div class="form-submit-row-controll">
+              <button type="submit" class="button login-button">
+                <span class="button-text">Register</span>
+              </button>
+            </div>
+          </div>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div class="block-outer">
+    <div class="block-outer-middle">
+      Already have account?
+      <a href="/login" class="button">
+        <span class="button-text">Login here</span>
+      </a>
+    </div>
+  </div>
+</form>

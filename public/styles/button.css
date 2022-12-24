@@ -1,0 +1,48 @@
+.button-text{
+    color: #ebeced;
+    line-height: 1.5;
+}
+.button.button--link{
+    border-color: #d0d3d5 #b5b9bd #b5b9bd #d0d3d5;
+}
+.button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    -webkit-transition: background-color .125s ease, border-color .125s ease, color .125s ease;
+    transition: background-color .125s ease, border-color .125s ease, color .125s ease;
+    font-size: 0.875rem;
+    border-radius: 4px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    text-align: center;
+}
+.button.button--primary, a.button.button--primary {
+    color: #fff;
+    background: #5c7099;
+    min-width: 80px;
+    border-color: #697da5 #526489 #526489 #697da5;
+}
+.icon--reply::before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f3e5";
+}
+.icon--user::before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f007";
+    color: #8f9193;
+}
+.icon--clock::before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f017";
+    color: #8f9193;
+}
