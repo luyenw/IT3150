@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "639d61ee38b2c988a48ef137"
+  },
+  "title": "Phần mềm & Games",
+  "forumsID": [
+    {
+      "$oid": "639d620238b2c988a48ef143"
+    },
+    {
+      "$oid": "639d620f38b2c988a48ef152"
+    },
+    {
+      "$oid": "639d624138b2c988a48ef15e"
+    },
+    {
+      "$oid": "639d62ef38b2c988a48ef17d"
+    }
+  ],
+  "slug": "phan-mem-and-games",
+  "__v": 4
+},{
+  "_id": {
+    "$oid": "639d626238b2c988a48ef16f"
+  },
+  "title": "Watch",
+  "forumsID": [
+    {
+      "$oid": "639d62fa38b2c988a48ef18c"
+    }
+  ],
+  "slug": "watch",
+  "__v": 1
+},{
+  "_id": {
+    "$oid": "63a07198721a8db7c687822c"
+  },
+  "title": "Máy tính",
+  "forumsID": [
+    {
+      "$oid": "63a071ab721a8db7c687823e"
+    },
+    {
+      "$oid": "63a071cd721a8db7c687824c"
+    },
+    {
+      "$oid": "63a071db721a8db7c687825a"
+    }
+  ],
+  "slug": "may-tinh",
+  "__v": 3
+}]

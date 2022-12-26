@@ -1,0 +1,159 @@
+[{
+  "_id": {
+    "$oid": "639d620238b2c988a48ef143"
+  },
+  "title": "JavaScript: SyntaxError: missing ) after argument list",
+  "threadsID": [],
+  "slug": "javascript-syntaxerror-missing-after-argument-list",
+  "__v": 0,
+  "boxID": {
+    "$oid": "639d61ee38b2c988a48ef137"
+  },
+  "total_threads": 0,
+  "total_messages": 0
+},{
+  "_id": {
+    "$oid": "639d620f38b2c988a48ef152"
+  },
+  "title": "Review phim",
+  "threadsID": [
+    {
+      "$oid": "63a07758e807df10d34656dc"
+    }
+  ],
+  "slug": "review-phim",
+  "__v": 1,
+  "boxID": {
+    "$oid": "639d61ee38b2c988a48ef137"
+  },
+  "lastThread": {
+    "$oid": "63a07758e807df10d34656dc"
+  },
+  "total_threads": 1,
+  "total_message": 1
+},{
+  "_id": {
+    "$oid": "639d624138b2c988a48ef15e"
+  },
+  "title": "Khu thương mại",
+  "threadsID": [],
+  "slug": "khu-thuong-mai",
+  "__v": 0,
+  "boxID": {
+    "$oid": "639d61ee38b2c988a48ef137"
+  },
+  "total_threads": 0,
+  "total_messages": 0
+},{
+  "_id": {
+    "$oid": "639d62ef38b2c988a48ef17d"
+  },
+  "title": "Chiếc xe bị bỏ quên và vụ gạt tàn trong xe",
+  "threadsID": [],
+  "slug": "chiec-xe-bi-b-quen-va-vu-gat-tan-trong-xe",
+  "__v": 0,
+  "boxID": {
+    "$oid": "639d61ee38b2c988a48ef137"
+  },
+  "total_threads": 0,
+  "total_message": 0
+},{
+  "_id": {
+    "$oid": "639d62fa38b2c988a48ef18c"
+  },
+  "title": "Chiếc xe bị bỏ quên và vụ gạt tàn trong xe",
+  "threadsID": [
+    {
+      "$oid": "639d635e38b2c988a48ef1aa"
+    },
+    {
+      "$oid": "639d98ec38b2c988a48ef22c"
+    },
+    {
+      "$oid": "63a02103aedcf20b09721576"
+    },
+    {
+      "$oid": "63a02170aedcf20b0972158f"
+    },
+    {
+      "$oid": "63a021deaedcf20b097215af"
+    },
+    {
+      "$oid": "63a022aaaedcf20b097215d4"
+    },
+    {
+      "$oid": "63a045e2630edeecd1231a5a"
+    },
+    {
+      "$oid": "63a0461c630edeecd1231a7a"
+    },
+    {
+      "$oid": "63a046b7630edeecd1231a93"
+    },
+    {
+      "$oid": "63a04724630edeecd1231ab8"
+    },
+    {
+      "$oid": "63a0478b630edeecd1231add"
+    },
+    {
+      "$oid": "63a047a1630edeecd1231af6"
+    }
+  ],
+  "slug": "chiec-xe-bi-b-quen-va-vu-gat-tan-trong-xe-o72H5bdy-4",
+  "__v": 12,
+  "lastThread": {
+    "$oid": "63a047a1630edeecd1231af6"
+  },
+  "boxID": {
+    "$oid": "639d626238b2c988a48ef16f"
+  },
+  "total_threads": 12,
+  "total_messages": 24
+},{
+  "_id": {
+    "$oid": "63a071ab721a8db7c687823e"
+  },
+  "title": "AMD",
+  "threadsID": [],
+  "boxID": {
+    "$oid": "63a07198721a8db7c687822c"
+  },
+  "slug": "amd",
+  "__v": 0,
+  "total_threads": 0,
+  "total_messages": 0
+},{
+  "_id": {
+    "$oid": "63a071cd721a8db7c687824c"
+  },
+  "title": "Intel",
+  "threadsID": [
+    {
+      "$oid": "63a074d0e807df10d3465648"
+    }
+  ],
+  "boxID": {
+    "$oid": "63a07198721a8db7c687822c"
+  },
+  "slug": "intel",
+  "__v": 1,
+  "lastThread": {
+    "$oid": "63a074d0e807df10d3465648"
+  },
+  "total_threads": 1,
+  "total_messages": 1
+},{
+  "_id": {
+    "$oid": "63a071db721a8db7c687825a"
+  },
+  "title": "Tư vấn cấu hình",
+  "threadsID": [],
+  "boxID": {
+    "$oid": "63a07198721a8db7c687822c"
+  },
+  "slug": "tu-van-cau-hinh",
+  "__v": 0,
+  "total_threads": 0,
+  "total_message": 0
+}]
