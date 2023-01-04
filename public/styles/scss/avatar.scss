@@ -1,0 +1,110 @@
+@use 'constant';
+.avatar{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    vertical-align: top;
+    overflow: hidden;
+    &.avatar--m {
+        width: constant.$avatar--m-width;
+        height: constant.$avatar--m-width;
+        font-size: constant.$avatar--m-fs;
+    }
+    &.avatar--s{
+        width: constant.$avatar--s-width;
+        height: constant.$avatar--s-width;
+        font-size: constant.$avatar--s-fs;
+    }
+    &.avatar--l {        
+        width: constant.$avatar--l-width;
+        height: constant.$avatar--l-width;
+        font-size: constant.$avatar--l-fs;
+    }
+    img:not(.cropImage) {
+        text-indent: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        word-wrap: normal;
+        display: block;
+        border-radius: inherit;
+        width: 100%;
+        height: 100%;
+    }
+    img{
+        object-fit: cover;
+    }
+}
+.avatarWrapper-update {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0;
+    -webkit-transition: opacity .25s ease;
+    transition: opacity .25s ease;
+    background: black;
+    border-radius: 50%;
+    margin: 8px;
+    padding-bottom: 4px;
+    span {
+        position: relative;
+    }
+    &:hover{
+        opacity: 0.2;
+    }
+}
+.hidden-panel{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    z-index: 99;
+    background: constant.$msg-bg-color;
+    border: constant.$form-row-bg-color;
+    .overlay-title{
+        padding: 8px;
+        background: constant.$block-header-bg-color;
+    }
+    .overlay-content{
+        color: constant.$msg-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &.avatar-input{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+.blur-layer{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #0000004f;
+    z-index: 9;
+}
+.show{
+    display: block;
+}

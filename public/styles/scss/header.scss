@@ -1,0 +1,56 @@
+@use 'constant';
+.header{
+    nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 8px;
+        font-size: large;
+        position: relative;
+        top: 0;
+        color: constant.$text-color;
+        background: constant.$bg-color;
+    }
+}
+
+.logo{
+    a{
+        font-family: 'Nabla', cursive;
+        font-size: xx-large;
+        cursor: pointer;
+        padding: 0 8px;
+    }
+    &>a:hover{
+        text-decoration: none;
+    }
+}
+
+.nav__links {
+    list-style: none;
+    li {
+        display: inline-block;
+        padding: 0 12px;
+        &>a{
+            color: constant.$text-color;
+            &:hover{
+                text-decoration: underline;
+                color: constant.$a-hover-color;
+            }
+        }
+    }
+}
+
+.logout_button{
+    background-color: transparent;
+    border: none;
+    font-family: 'Work', monospace;
+    font-size: large;
+    font-weight: 300;
+    color: constant.$text-color;
+    &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+        color: constant.$a-hover-color;
+    }
+}

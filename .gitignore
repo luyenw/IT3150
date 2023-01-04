@@ -1,2 +1,4 @@
 .env
 node_modules
+public/upload/
+public/styles/css

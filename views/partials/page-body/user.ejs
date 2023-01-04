@@ -1,4 +1,6 @@
+<form action="/upload" method="post" enctype="multipart/form-data">
 <div class="block">
+    <%- include('../item/breadcrumbs', {title: ['Member'], links: [''] }) %>
     <div class="block-container">
         <div class="block-body">
             <div class="memberHeader">
@@ -7,9 +9,11 @@
                         <span class="memberHeader-avatar">
                             <span class="avatarWrapper">
                                 <a class="avatar avatar--l" href="">
-                                    <img src=<%= user.avatarUrl %> alt=<%= user.username %> loading="lazy" itemprop="image">
+                                    <img src=<%= profile.avatarUrl %> alt=<%= profile.username %> loading="lazy" itemprop="image">
                                 </a>
-                                <a class="avatarWrapper-update" href="/account/avatar" data-xf-click="overlay"><span>Edit</span></a>
+                                <% if(profile.username === user?.username) {%>
+                                <a class="avatarWrapper-update" data-xf-click="overlay"></a>
+                                <% } %>
                             </span>
                         </span>
                         <div class="memberHeader-content">
@@ -43,3 +47,49 @@
         </div>
     </div>
 </div>
+<div class="blur-layer">
+
+</div>
+<div class="hidden-panel">
+    <div class="block">
+        <div class="overlay-title">
+            <h1>Avatar</h1>
+        </div>
+        <div class="block-container">
+            <div class="overlay-content">
+                <div class="block-body">
+                    <dl class="form-row">
+                        <dt>
+                            <div class="avatar-preview">
+                                <a href="" class="avatar avatar--m">
+                                    <img src=<%= profile.avatarUrl %> alt="">
+                                </a>
+                            </div>
+                        </dt>
+                        <dd>
+                            <div class="avatar-input">
+                                <h3>Upload new custom avatar:</h3>
+                                <input type="file" name="image" id="">
+                            </div>
+                        </dd>
+                    </dl>
+              
+                    <dl class="form-submit-row">
+                        <dt></dt>
+                        <dd>
+                          <div class="form-submit-row-main">
+                            <div class="form-submit-row-bar"></div>
+                            <div class="form-submit-row-controll">
+                              <button type="submit" class="button login-button">
+                                <span class="button-text ">Okay</span>
+                              </button>
+                            </div>
+                          </div>
+                        </dd>
+                    </dl>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>

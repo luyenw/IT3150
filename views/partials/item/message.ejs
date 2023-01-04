@@ -5,7 +5,8 @@
                 <div class="message-avatar">
                     <div class="message-avatar-wrapper">
                         <a class="avatar avatar--m" href=<%="/u/"+message.userID.slug%>>
-                            <img src="https://statics.voz.tech/data/avatars/m/1832/1832781.jpg?1663590810" srcset="https://statics.voz.tech/data/avatars/l/1832/1832781.jpg?1663590810 2x" alt="linhlevis" class="avatar-u1832781-m" width="96" height="96" loading="lazy" itemprop="image">
+                            <% url = (type==0)?message.userID.avatarUrl:user.avatarUrl %>
+                            <img src=<%=url%> width="96" height="96" loading="lazy" itemprop="image">
                         </a>
                     </div>
                 </div>
@@ -24,6 +25,7 @@
         </div>
         <div class="message-cell message-cell--main">
             <div class="message-main">
+            <% if(type==0){ %>
             <div class="message-attribution">
                 <ul>
                     <li>
@@ -33,6 +35,7 @@
                     </li>
                 </ul>
             </div>
+            <% } %>
             <div class="message-content">
                 <% if(type==0){ %>
                 <%- message.body %>

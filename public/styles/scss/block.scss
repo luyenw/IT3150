@@ -1,9 +1,7 @@
+@use 'constant';
+
 .block-container{
-    color: #15191d;
-    border-top-color: #cbcdd0;
-    border-right-color: #c3c6c9;
-    border-bottom-color: #b5b9bd;
-    border-left-color: #c3c6c9;
+    border-color: constant.$block-container-border-color;
 }
 .block-header{
     display: flex;

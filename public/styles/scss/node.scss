@@ -1,3 +1,4 @@
+@use 'constant';
 .node-body{
     display: table;
     table-layout: fixed;
@@ -24,38 +25,37 @@
     vertical-align: middle;
     text-align: center;
     padding: 10px 0;
+    color: constant.$node-stats-color;
+    &>dl.pairs{
+        &.pairs--rows {
+            width: 50%;
+            float: left;
+            margin: 0;
+            padding: 0 3px;
+            &:first-child{
+                padding-left: 0;
+            }
+        }
+    }
 }
 .node-extra-list{
     display: flex;
     flex-direction: row;
+    li{
+        padding-right: 4px;
+    }
 }
 .node-extra-row{
     overflow: hidden;
     white-space: nowrap;
     word-wrap: normal;
     text-overflow: ellipsis;
-    color: #8f9193;
-}
-.node-extra-list li{
-    padding-right: 4px;
-}
-.node-icon{
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    width: 46px;
-    padding: 10px 0 10px 10px;
+    color: constant.$item-meta-color;
 }
 .node{
     display: flex;
     flex-direction: row;
-    background-color: #ebeced;
-}
-.node-icon i{
-    display: block;
-    line-height: 1.125;
-    font-size: 32px;
-    color: #ffba8c;
+    background-color: constant.$text-color;
 }
 .node-icon{
     display: table-cell;
@@ -63,15 +63,12 @@
     text-align: center;
     width: 46px;
     padding: 10px 0 10px 10px;
-}
-.node-stats>dl.pairs.pairs--rows:first-child {
-    padding-left: 0;
-}
-.node-stats>dl.pairs.pairs--rows {
-    width: 50%;
-    float: left;
-    margin: 0;
-    padding: 0 3px;
+    i{
+        display: block;
+        line-height: 1.125;
+        font-size: 32px;
+        color: constant.$i-color;
+    }
 }
 .node-extra-icon {
     padding-right: 10px;

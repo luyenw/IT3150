@@ -1,0 +1,70 @@
+@use 'constant';
+.form-submit-row-controll{
+    position: relative;
+    padding-left: 33%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.form-row{
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    background-color: constant.$text-color;
+    &>dt{
+        border-right: 1px solid transparent;
+        background: constant.$form-row-bg-color;
+        color: constant.$bg-color;
+        border-color: constant.$form-row-border-color;
+        text-align: right;
+        width: 33%;
+        padding: 15px 10px 15px 10px;
+    }
+    &>dd{
+        width: 67%;
+        padding: 15px 10px 15px 10px;
+    }
+    &>dt, &>dd{
+        display: table-cell;
+        vertical-align: top;
+        margin: 0;
+    }
+}
+.form-submit-row-bar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: constant.$form-submit-row-bar-bg-color;
+    border-top: 1px solid #b5b9bd;
+}
+.form-submit-row-main{
+    position: relative;
+}
+.login-button{
+    color: constant.$text-color;
+    background: constant.$block-header-bg-color;
+    min-width: 80px;
+    border-color: constant.$btn--link-border--primary;
+    &:hover{
+        background-color: constant.$btn--link-hover-color;
+    }
+    &>span.login-icon{
+        padding: 0 8px;
+        &::before{
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f2f6";
+        }
+    }
+}
+.block-outer-middle{
+    text-align: center;
+}
+.block-outer{
+    padding: 8px 0;
+}

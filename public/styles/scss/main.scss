@@ -1,25 +1,22 @@
+@use 'constant';
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
-    background-color: #343a40;
-    font-family: 'WorkSans', monospace;
-    color: #ebeced;
+    background-color: constant.$bg-color;
+    font-family: 'Work', monospace;
+    color: constant.$text-color;
     display: flex;
     flex-direction: column;
 }
 header{
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.07);
+    box-shadow: constant.$header-box-shadow;
 }
-
-.meta-data:hover{
-    color: #f60;
-    text-decoration: underline;
-}
-.meta-data{
-    color: #23497c;
+li {
+    list-style: none;
 }
 .icon::before {
     display: inline-block;
@@ -55,11 +52,11 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
     display: block;
 }
 a{
-    color: #23497c;
+    color: constant.$a-color;
     text-decoration: none;
 }
 a:hover{
-    color: #f60;
+    color: constant.$a-hover-color;
     text-decoration: underline;
 }
 .sticky{

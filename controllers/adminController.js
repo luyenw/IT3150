@@ -1,10 +1,14 @@
-const Box = require('../models/BoxModel')
+const Box = require("../models/BoxModel");
 
-exports.get_root = (req, res) =>{
-    res.render('pages/admin/index')
-}
-exports.post_new_box = (req, res) => {
-    const box = new Box({title: req.body.title})
-    box.save()
-    res.redirect('/')
-}
+controller = {};
+module.exports = (io) => {
+    controller.get_root = (req, res) => {
+        res.render("pages/admin/index");
+    };
+    controller.post_new_box = (req, res) => {
+        const box = new Box({ title: req.body.title });
+        box.save();
+        res.redirect("/");
+    };
+    return controller;
+};

@@ -1,0 +1,83 @@
+@use 'constant';
+.pageNav{
+    display: flex;
+    justify-content: flex-start;
+}
+.pageNav-main {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.pageNav-jump {
+    display: inline-block;
+    background: constant.$filter-bar-bg-color;
+    color: #23497c;
+    border-color: constant.$block-container-border-color;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    border-radius: 2px;
+    padding: 5px 8px;
+    &.pageNav-jump--prev:before {
+        content: "\f0d9";
+        margin-right: 4px;
+    }
+    &.pageNav-jump--next:after {
+        content: "\f0da";
+        margin-left: 4px;
+    }
+    &.pageNav-jump--prev{
+        margin-right: 4px;
+    }
+    &.pageNav-jump--next{
+        margin-left: 4px;
+    }
+    &.pageNav-jump--next:after, &.pageNav-jump--prev:before{
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        display: inline-block;
+        text-align: center;
+    }
+    &:hover, &:active{
+        background: constant.$page-nav-hover;
+        text-decoration: none;
+    }
+}
+.pageNav-page {
+    display: table-cell;
+    background: constant.$filter-bar-bg-color;
+    color: constant.$a-color;
+    border-color: constant.$block-container-border-color;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    &>a{
+        display: block;
+        padding: 5px 8px;
+        text-decoration: none;
+        color: inherit;
+    }
+    &:first-child {
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+    }
+    &:not(:last-child) {
+        border-right: none;
+    }
+    &:last-child {
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+    }
+    &:not(:first-child) {
+        border-left-color: constant.$form-row-border-color;
+    }
+    &.pageNav-page--current {
+        background: constant.$a-hover-color--l;
+        color: constant.$a-color;
+        border: 1px solid #ffba8c;
+        cursor: pointer;
+    }
+    &:hover, &:active {
+        background: constant.$page-nav-hover;
+        text-decoration: none;
+    }
+}

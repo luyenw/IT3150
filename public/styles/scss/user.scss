@@ -1,9 +1,10 @@
+@use 'constant';
 .memberHeader-name{
     margin: 0;
     margin-top: -0.15em;
     padding: 0;
     font-weight: 400;
-    color: #23497c;
+    color: constant.$a-color;
 }
 .memberHeader-mainContent{
     position: relative;

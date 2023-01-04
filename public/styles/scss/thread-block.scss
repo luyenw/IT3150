@@ -1,27 +1,30 @@
+@use 'constant';
 .message-inner{
     display: flex;
-}
-.message-cell.message-cell--user{
-    position: relative;
-    background: #e2e3e5;
-    border-right: 1px solid #c3c6c9;
-    min-width: 0;
-    flex: 0 0 140px;
-}
-.message-main{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
 }
 .message-cell{
     display: block;
     vertical-align: top;
     padding: 10px;
     width: 100%;
+    &.message-cell--user{
+        position: relative;
+        background: constant.$msg-cell--user-bg-color;
+        border-right: 1px solid constant.$msg-cell-arrow-color;
+        min-width: 0;
+        flex: 0 0 140px;
+    }
+    &.message-cell--main{ 
+        img{
+            max-width:100%;
+            max-height:100%;
+        }
+    }
 }
-.message-cell.message-cell--main img{
-    max-width:100%;
-    max-height:100%;
+.message-main{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .message-avatar-wrapper {
     position: relative;
@@ -34,6 +37,7 @@
     font-size: inherit;
     text-align: center;
     margin: 0;
+    overflow-wrap: break-word;
 }
 
 .message-avatar{
@@ -45,22 +49,23 @@
     right: -1px;
     border: 10px solid transparent;
     border-left-width: 0;
-    border-right-color: #c3c6c9;
-}
-.message-userArrow:after {
-    position: absolute;
-    top: -9px;
-    right: -10px;
-    content: "";
-    border: 9px solid transparent;
-    border-left-width: 0;
-    border-right-color: #ebeced;
+    border-right-color: constant.$msg-cell-arrow-color;
+    &::after {
+        position: absolute;
+        top: -9px;
+        right: -10px;
+        content: "";
+        border: 9px solid transparent;
+        border-left-width: 0;
+        border-right-color: constant.$msg-bg-color;
+    }
 }
 .message:not(:last-child){
     margin-bottom: 6px;
 }
 .message{
-    background-color: #ebeced;
+    color: constant.$msg-color;
+    background-color: constant.$msg-bg-color;
 }
 .formButton{
     display: flex;
@@ -69,7 +74,7 @@
     margin-bottom: -5px;
 }
 .message-attribution {
-    color: #8f9193;
+    color: constant.$item-meta-color;
     font-size: 0.75rem;
     padding-bottom: 3px;
     border-bottom: 1px solid #d3d5d7;
@@ -79,6 +84,9 @@
 }
 .message-actionBar{
     float: right;
+    &.actionBar-set {
+        font-size: 0.5rem;
+    }
 }
 .actionBar-action {
     display: inline-block;
@@ -86,9 +94,6 @@
     border: 1px solid transparent;
     border-radius: 4px;
     margin-left: 5px;
-}
-.message-actionBar.actionBar-set {
-    font-size: 0.5rem;
 }
 .reply-form{
     margin-top: 8px;

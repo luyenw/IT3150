@@ -1,3 +1,4 @@
+@use 'constant';
 .item-body{
     display: flex;
     flex-direction: row;
@@ -14,10 +15,10 @@
     flex-direction: row;
     justify-content: space-between;
     padding-left: 16px;
-    color:#8f9193;
+    color: constant.$item-meta-color;
 }
 .item{
-    background-color: #ebeced;
+    background-color: constant.$text-color;
 }
 .item+.item{
     border-top: 1px solid #d3d5d7;
@@ -36,26 +37,32 @@
     max-width: 300px;
 }
 .item-extra-date{
-    color: #8f9193;
+    color: constant.$item-meta-color;
+    &>a:hover{
+        color:constant.$item-meta-color;
+        text-decoration: none;
+    }
 }
-.item-extra-date>a:hover{
-    color:#8f9193;
-    text-decoration: none;
+.item-extra-list{
+    li{
+        padding-left: 4px;
+    }
 }
-.item-extra-list li{
-    padding-left: 4px;
-}
-#dot::before{
-    content: " ";
-}
-.item-stats td{
-    font-size: 0.9em;
+.item-stats{
+    td{
+        font-size: 0.9em;
+    }
 }
 .item-last-reply{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
-.item-last-reply-user a{
-    font-size: 0.9em;
+.item-last-reply-user{
+    a{
+        font-size: 0.9em;
+    }
+}
+#dot::before{
+    content: " ";
 }

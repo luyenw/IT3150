@@ -1,0 +1,39 @@
+@use 'constant';
+.forum-block+.forum-block{
+    margin-top: 12px;
+}
+.forum-block-body{
+    color: constant.$forum-block-body-color;
+}
+.forum-block-filter-bar{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 6px 10px;
+    font-size: 0.875rem;
+    color: constant.$text-color;
+    border-bottom: 1px solid #b5b9bd;
+    background: constant.$filter-bar-bg-color;
+}
+.trigger-menu{
+    color: constant.$trigger-menu-color;
+    &::before{
+        content: " Filters ";
+    }
+    &::after{
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: " \f0d7";
+    }
+    &:hover{
+        background-color: constant.$trigger-menu-hover-bg;
+        color: constant.$trigger-menu-hover-color;
+    }
+}
+.forum-header{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-title{
+    padding-bottom: 4px;
+}
