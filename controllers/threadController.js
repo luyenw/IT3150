@@ -13,7 +13,7 @@ module.exports = (io) => {
             .populate({ path: "forumID", populate: { path: "boxID" } })
             .exec((err, thread) => {
                 if (thread) {
-                    const total_comments = thread.commentsID.length;
+                    const total_comments = thread.commentsID.length-1;
                     const total_pages = Math.ceil(
                         total_comments / constant.COMMENTS_PER_PAGE
                     );
@@ -62,6 +62,8 @@ module.exports = (io) => {
                     forum.total_messages += 1;
                     forum.save();
                 });
+                io.to(thread.userID.username).emit('new-notification', 'co thong bao moi')
+                console.log(req.user.username + ' send to ' + thread.userID.username)
                 res.redirect("/t/" + req.params.slug);
             } else {
                 return res.redirect("/");

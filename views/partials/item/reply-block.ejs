@@ -1,7 +1,35 @@
 <textarea id="div_editor1" name="body">
 </textarea>
 <script>
-	var editor1 = new RichTextEditor("#div_editor1");
+  window.onload = function(){
+    var editor1 = new RichTextEditor("#div_editor1");
+    const reply_btn = document.getElementsByClassName('actionBar-action--reply')
+    // console.log('reply block:' + reply_block)
+    
+    const reply_btn_click=(e)=>{
+        console.log(e.target.id)
+        fetch('/api/comment/'+e.target.id)
+          .then(respone=>respone.json())
+          .then(data=>{
+            editor1.collapse(false);
+            editor1.insertHTML('<blockquote>'
+      +  '<div class="blockquote-title">'
+      +  '<a style="color: inherit">' + data.userID.username + ' said:' + '</a>'
+      +  '</div>' 
+      +  '<div class="blockquote-content">'
+      +  data.body
+      +  '</div>'
+    +  '</blockquote>')
+      })
+        
+        editor1.collapse(false);
+		    // editor1.focus();
+    }
+    
+    for (var i = 0 ; i < reply_btn.length; i++) {
+        reply_btn[i].addEventListener('click' , reply_btn_click, false) ; 
+    }
+}
 </script>
 <div class="formButton">
   <button type="submit" class="button--primary button button--icon button--icon--reply">

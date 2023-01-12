@@ -1,0 +1,18 @@
+blockquote {
+    display: flow-root;
+    margin: 0.5em 0;
+    background: #e2e3e5;
+    border: 1px solid #d3d5d7;
+    border-left: 3px solid #ff944d;
+}
+.blockquote-title{
+    padding: 6px 10px;
+    font-size: 0.875rem;
+    color: #ff944d;
+    background: #e7e8e9;
+}
+.blockquote-content{
+    font-size: 0.875rem;
+    position: relative;
+    padding: 6px 10px;
+}

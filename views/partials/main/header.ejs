@@ -3,7 +3,7 @@
     <div class="logo">
       <a href="/">Forum</a>
     </div>
-    <div>
+    <div class="header-container">
       <ul class="nav__links">
       <% if (!user){ %>
       <li class="nav-item">
@@ -16,6 +16,9 @@
         <li class="nav-item">
           <a class="nav-link" href=<%="/u/"+user.slug%>><%=user.username%></a>
         </li>
+        <li class="nav-item alert">
+          <a class="nav-link icon icon--alert"></a>
+        </li>
         <li class="nav-item">
           <form action="/" method="post">
             <input class="logout_button" type="submit" value="Logout">
@@ -26,3 +29,20 @@
     </div>
   </nav>
 </header>
+<% if(user){ %>
+<div class="alerts-panel">
+
+</div>
+<style>
+  .alerts-panel{
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    background-color: red;
+    display: none;
+  }
+  .show{
+    display: block;
+  }
+</style>
+<% } %>

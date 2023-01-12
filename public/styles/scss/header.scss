@@ -5,15 +5,20 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 12px 8px;
         font-size: large;
         position: relative;
         top: 0;
         color: constant.$text-color;
         background: constant.$bg-color;
     }
+    
 }
-
+.header-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
 .logo{
     a{
         font-family: 'Nabla', cursive;
@@ -28,14 +33,23 @@
 
 .nav__links {
     list-style: none;
+    min-height: 100%;
+    display: table;
+    align-items: center;
     li {
-        display: inline-block;
+        background-color: rgba(0, 0, 0, 0.1);
+        display: table-cell;
         padding: 0 12px;
+        text-align: center;
+        min-width: 100px;
+        vertical-align: middle;
+        &:hover{
+            background-color: rgba($color: #000000, $alpha: 0.2);
+        }
         &>a{
             color: constant.$text-color;
             &:hover{
                 text-decoration: underline;
-                color: constant.$a-hover-color;
             }
         }
     }
@@ -51,6 +65,6 @@
     &:hover{
         cursor: pointer;
         text-decoration: underline;
-        color: constant.$a-hover-color;
+        // color: constant.$a-hover-color;
     }
 }

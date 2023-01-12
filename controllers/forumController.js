@@ -6,19 +6,11 @@ const constant = require("../config/constant");
 controller = {};
 module.exports = (io) => {
     controller.get_new = (req, res) => {
-      io.on("connection", (socket) => {
-        if (req.user) socket.join(req.user.username);
-        else socket.join("no-group");
-    });
         Box.find({}).exec((err, boxes) => {
             res.render("pages/forum/new", { boxes: boxes });
         });
     };
     controller.post_new = (req, res) => {
-      io.on("connection", (socket) => {
-        if (req.user) socket.join(req.user.username);
-        else socket.join("no-group");
-    });
         const forum = { title: req.body.title };
         const new_forum = new Forum(forum);
         Box.findOne({ slug: req.body.box }).exec((err, box) => {
@@ -30,10 +22,6 @@ module.exports = (io) => {
         res.redirect("/");
     };
     controller.get_slug = (req, res) => {
-      io.on("connection", (socket) => {
-        if (req.user) socket.join(req.user.username);
-        else socket.join("no-group");
-    });
         const slug_param = req.params.slug;
         let page_param = req.params.page;
         Forum.findOne({ slug: slug_param })
@@ -79,10 +67,6 @@ module.exports = (io) => {
             });
     };
     controller.get_post_thread = (req, res) => {
-      io.on("connection", (socket) => {
-        if (req.user) socket.join(req.user.username);
-        else socket.join("no-group");
-    });
         Forum.findOne({ slug: req.params.slug }).then((forum) => {
             if (forum) {
                 res.render("pages/forum/new_thread", {
@@ -95,10 +79,6 @@ module.exports = (io) => {
         });
     };
     controller.post_post_thread = (req, res) => {
-      io.on("connection", (socket) => {
-        if (req.user) socket.join(req.user.username);
-        else socket.join("no-group");
-    });
         Forum.findOne({ slug: req.params.slug }).then((forum) => {
             if (forum) {
                 const thread = {

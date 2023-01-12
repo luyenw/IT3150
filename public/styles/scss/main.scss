@@ -58,6 +58,7 @@ a{
 a:hover{
     color: constant.$a-hover-color;
     text-decoration: underline;
+    cursor: pointer;
 }
 .sticky{
     position: fixed;

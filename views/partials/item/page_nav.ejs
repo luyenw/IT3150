@@ -5,7 +5,7 @@
     <ul class="pageNav-main">
         <% if (current_page > 5) { %>
             <li class="pageNav-page">
-                <a href="">
+                <a href=<%= slug + '/' %>>
                     1
                 </a>
             </li>
@@ -21,6 +21,7 @@
                     </a>
                 </li>
             <% } %>
+
         <% } else if (current_page <= 5) { %>
             <% for (let i=1; i<current_page; i++) { %>
                 <li class="pageNav-page">
@@ -46,6 +47,11 @@
             <li class="pageNav-page pageNav-page--skip pageNav-page--skipEnd">
                 <a href="">
                     ...
+                </a>
+            </li>
+            <li class="pageNav-page">
+                <a href=<%= slug + '/' + total_pages %>>
+                    <%= total_pages %>
                 </a>
             </li>
         <% } else if (total_pages - current_page <= 5) { %>

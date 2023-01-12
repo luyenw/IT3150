@@ -11,9 +11,12 @@ initializePassport(passport);
 // import socket io
 http.listen(3000);
 const io = require("socket.io")(http);
-
-const connections = {};
-
+io.on('connection', socket=>{
+    socket.on('join-room', room=>{
+        socket.join(room)
+        console.log(socket.id + ' joined to ' + room)
+    })
+})
 // import another libs
 const bodyParser = require("body-parser");
 const connect = require("./config/db/index.js");
@@ -56,7 +59,9 @@ const forumRouter = require("./routers/forumRouter")(io);
 const threadRouter = require("./routers/threadRouter")(io);
 const userRouter = require("./routers/userRouter")(io);
 const adminRouter = require("./routers/adminRouter")(io);
+const apiRouter = require("./routers/apiRoter")(io);
 //
+app.use("/api", apiRouter)
 app.use("/", indexRouter);
 app.use("/f", forumRouter);
 app.use("/t", threadRouter);

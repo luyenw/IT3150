@@ -47,3 +47,9 @@
     content: "\f017";
     color: constant.$item-meta-color;
 }
+.icon--alert::before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f0f3";
+    color: constant.$text-color;
+}
