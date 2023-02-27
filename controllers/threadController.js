@@ -2,6 +2,7 @@ const Thread = require("../models/ThreadModel");
 const Comment = require("../models/CommentModel");
 const constant = require("../config/constant");
 const Forum = require("../models/ForumModel");
+const NotificationModel = require("../models/NotificationModel");
 
 controller = {};
 module.exports = (io) => {
@@ -63,6 +64,16 @@ module.exports = (io) => {
                     forum.save();
                 });
                 io.to(thread.userID.username).emit('new-notification', 'co thong bao moi')
+                // add new notification
+                const notification = {
+                    fromID: req.user._id,
+                    toID: thread.userID._id,
+                    forumID: thread.forumID,
+                    threadID: thread._id
+                }
+                console.log(notification)
+                const new_notification = NotificationModel(notification)
+                new_notification.save()
                 console.log(req.user.username + ' send to ' + thread.userID.username)
                 res.redirect("/t/" + req.params.slug);
             } else {

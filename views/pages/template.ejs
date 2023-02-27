@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <head>
     <%- include('../partials/main/head') %>
   </head>
   <body>
-    <%- include('../partials/main/header') %>
+    <%- include('../partials/main/header', {user: user}) %>
     <main id="main">
       <%- include('../partials/content', {page: page, data: data}) %>
     </main>
     <%- include('../partials/main/footer') %>
   </body>
   <!-- <script type="text/javascript" src='/js/socket.js'></script> -->
-<!-- <script type="text/javascript" src='/js/change-avatar.js'></script> -->
-<link rel="stylesheet" href="/richtexteditor/rte_theme_default.css" />
+  <link rel="stylesheet" href="/richtexteditor/rte_theme_default.css" />
   <script type="text/javascript" src="/richtexteditor/rte.js"></script>
   <script type="text/javascript" src='/richtexteditor/plugins/all_plugins.js'></script>
-  
+  <script type="text/javascript" src='/js/change-avatar.js'></script>
 </html>
 

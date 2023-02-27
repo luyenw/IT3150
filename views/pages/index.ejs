@@ -4,7 +4,8 @@
     <%- include('../partials/main/head') %>
 </head>
 <body>
-    <%- include('../partials/main/header', {user: user}) %>
+    <% if( typeof(noti) =="undefined") noti = null %>
+    <%- include('../partials/main/header', {user: user, all_noti: noti}) %>
     <main>
         <% if (user?.role == 0){ %>
             <div><a href="/f/new">new forum</a></div>

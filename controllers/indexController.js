@@ -2,10 +2,12 @@ const User = require("../models/UserModel");
 const bcrypt = require("bcrypt");
 const Forum = require("../models/ForumModel");
 const Box = require("../models/BoxModel");
-
+const Notification = require("../models/NotificationModel");
+const { populate } = require("../models/NotificationModel");
 controller = {};
 module.exports = (io) => {
     controller.get_root = (req, res) => {
+        all_box = null
         Box.find({})
             .populate({
                 path: "forumsID",
@@ -13,7 +15,30 @@ module.exports = (io) => {
             })
             .exec((err, boxes) => {
                 boxes = boxes.map((box) => box.toObject());
-                res.render("pages/index", { user: req.user, boxes: boxes });
+                if(req.user){
+                    Notification.find({toID: req.user._id})
+                    .populate({
+                        path: "fromID",
+                    })
+                    .populate({
+                        path: "threadID"
+                    })
+                    .exec((err, notifications)=>{
+                        all_noti = []
+                        options = {
+                            minute: "2-digit",
+                            hour: "2-digit",
+                            weekday: "short",
+                            year: "numeric",
+                            month: "2-digit",
+                            day: "numeric"
+                        };
+                        // all_noti = all_noti.map((noti)=>noti.toObject())
+                        res.render("pages/index", { user: req.user, boxes: boxes});
+                    })
+                }else{
+                    res.render("pages/index", { user: req.user, boxes: boxes});
+                }   
             });
     };
     controller.post_root = (req, res) => {

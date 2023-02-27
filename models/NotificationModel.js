@@ -8,11 +8,13 @@ const Schema = mongoose.Schema
 const notificationSchema = new Schema({
     fromID: {type: mongoose.Types.ObjectId, ref: 'User'},
     toID: {type: mongoose.Types.ObjectId, ref: 'User'},
-    type: {type: Number, default: 1},
+    forumID: {type: mongoose.Types.ObjectId, ref: 'Forum'},
+    threadID: {type: mongoose.Types.ObjectId, ref: 'Thread'},
     createdAt: {type: Date, default: Date.now()}
 })
 
 notificationSchema.pre('save', function(next){
+    console.log('new reply')
     next()
 })
 

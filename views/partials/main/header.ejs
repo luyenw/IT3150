@@ -31,15 +31,54 @@
 </header>
 <% if(user){ %>
 <div class="alerts-panel">
-
+  <h2>Notification</h2>
+  <div class="noti-list"></div>
 </div>
 <style>
+  .notification-element{
+    display: flex;
+    flex-direction: row;
+    font-size: 0.8rem;
+    padding: 4px 0px;
+  }
+  .noti-list{
+    margin-top: 12px;
+    min-height: 150px;
+  }
+  .notification-element:hover{
+    background-color: rgba(0,0,0,0.1);
+    cursor: pointer;
+  }
+  .noti-content{
+    min-height: 40px;
+    max-height: 50px;
+    text-overflow: ellipsis;
+  }
+  .noti-img{
+    padding: 4px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .noti-body{
+    display: flex;
+    flex-direction: column;
+    padding-left: 4px;
+  }
   .alerts-panel{
-    width: 200px;
-    height: 200px;
+    overflow-y: scroll;
+    width: 300px;
+    padding: 8px;
+    min-height: 500px;
+    max-height: 500px;
     position: fixed;
-    background-color: red;
+    background-color: #ebeced;
+    color: #23497c;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     display: none;
+  }
+  .li--active{
+    background-color: #23497c !important;
   }
   .show{
     display: block;

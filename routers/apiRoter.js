@@ -5,5 +5,6 @@ module.exports = (io) =>{
     const controller = require('../controllers/apiController')(io)
     router.get('/comment/:id', controller.get_comment_id)
     router.get('/me', middlewares.checkNotAuthenticated, controller.get_me)
+    router.get('/noti', middlewares.checkNotAuthenticated, controller.get_noti)
     return router
 }

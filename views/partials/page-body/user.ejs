@@ -1,7 +1,7 @@
 <form action="/upload" method="post" enctype="multipart/form-data">
 <div class="block">
     <%- include('../item/breadcrumbs', {title: ['Member'], links: [''] }) %>
-    <div class="block-container">
+    <div class="block-container" style="position: relative;z-index: -1;">
         <div class="block-body">
             <div class="memberHeader">
                 <div class="memberHeader-main">
@@ -12,21 +12,21 @@
                                     <img src=<%= profile.avatarUrl %> alt=<%= profile.username %> loading="lazy" itemprop="image">
                                 </a>
                                 <% if(profile.username === user?.username) {%>
-                                <a class="avatarWrapper-update" data-xf-click="overlay"></a>
+                                <a class="avatarWrapper-update" data-xf-click="overlay">Edit</a>
                                 <% } %>
                             </span>
                         </span>
                         <div class="memberHeader-content">
                             <h1 class="memberHeader-name">
                                 <span class="username">
-                                    sdkskdd
+                                    <%= profile.username%>
                                 </span>
                             </h1>
                             <div class="memberHeader-blurbContainer">
                                 <div class="memberHeader-blurb"></div>
                                 <div class="memberHeader-blurb">
                                     <dl class="pairs pairs--inline">
-                                        <dt>Joined: </dt>
+                                        <dt>Joined: <%= profile.joined%></dt>
                                         <dd>sdksdk</dd>
                                     </dl>
                                 </div>
